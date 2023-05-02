@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "dd8b6508-8b53-4e9c-951b-077c52de1474",
+		"name": "APITest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2891199",
+		"_collection_link": "https://www.postman.com/abmishra1234/workspace/apitestworkspace29042023/collection/2891199-dd8b6508-8b53-4e9c-951b-077c52de1474?action=share&creator=2891199&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "API Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Product with path variable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/:productId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "8739"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Product with path variable and query param together",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/:productId?product-label=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						":productId"
+					],
+					"query": [
+						{
+							"key": "product-label",
+							"value": "true"
+						}
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "8739"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a product with query param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/:productId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						":productId"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "dairy",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "8739"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product With Category as Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?category=dairy",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "dairy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product With results as Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?results=5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "results",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product With category, results as Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?results=5&category=coffee",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "results",
+							"value": "5"
+						},
+						{
+							"key": "category",
+							"value": "coffee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product With available as Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?available=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "available",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/carts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register a new API client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Abinash Mishra\",\r\n   \"clientEmail\": \"abmishra1234@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api-clients",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api-clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cartId\": \"zF6zoVT_lCmv9EGyU0eZy\",\r\n    \"customerName\": \"Aastha Mishra\",\r\n    \"comment\": \"Getting gift from Papa!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "Kp2JFYao_ZnBKJFImLcRN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add an item to cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"productId\": 4643\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "K0QOHH3GHbd3BDqJRtGOj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"customerName\": \"Smita Mishra Jha\",\r\n \"comment\": \"Updated the Name of Customer to better adderess management\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders/:orderId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "0JFb4SEbr6hwfJaq-Srgo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the quantity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "K0QOHH3GHbd3BDqJRtGOj"
+						},
+						{
+							"key": "itemId",
+							"value": "284574203"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace an item in the cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 2177,\r\n    \"quantity\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "Kp2JFYao_ZnBKJFImLcRN"
+						},
+						{
+							"key": "itemId",
+							"value": "81089187"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an item in the cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "Kp2JFYao_ZnBKJFImLcRN"
+						},
+						{
+							"key": "itemId",
+							"value": "81089187"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders/:orderId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "0JFb4SEbr6hwfJaq-Srgo"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://simple-grocery-store-api.online"
+		},
+		{
+			"key": "accessToken",
+			"value": "Your Initial Token",
+			"type": "string"
+		},
+		{
+			"key": "orderId",
+			"value": "order id to be added",
+			"type": "string"
+		}
+	]
+}
